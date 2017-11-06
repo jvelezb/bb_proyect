@@ -1,0 +1,24 @@
+<div class="container">
+    <div cities-panel="forecast" show-entry="citiesArray" ciudad-clima="currentWeather"></div>
+
+
+    <div class="weather-data" ng-show="true">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="">
+                    <h3>
+                        {{forecast.city.name }}
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div current-weather-panel="current" show-entry="currentWeather" forecast-data-Chart="forecast"></div>
+
+
+        <div class="row">
+            <div class="col-xs-4" ng-repeat="number in rangeForecast()">
+                <div weather-panel="forecast" show-entry="forecast.list[number]"></div>
+            </div>
+        </div>
+    </div>
+</div>

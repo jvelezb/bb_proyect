@@ -1,33 +1,27 @@
-<div class="row">
-    <div class="col-xs-12">
-        <div class="weather panel panel-primary">
-            <div class="panel-heading">Today Weather for {{currentWeatherData.name}}</div>
-            <div class="panel-body">
-                <div>
-                    <p class="lead">
-                        <img ng-src="{{getIconImageUrl(currentWeatherData.weather[0].icon)}}"/>
-                        {{currentWeatherData.main.temp | number:1}}&#176;C {{currentWeather.weather[0].description}}
-                    </p>
-                    <p>Minimum Temp: {{currentWeatherData.main.temp_min}}&#176;C&nbsp;&nbsp;</p>
-                    <p> Maximum Temp: {{currentWeatherData.main.temp_max}}&#176;C </p>
+<div class="forecast-header">
+    <div class="day">{{currentWeatherData.name}}</div>
+    <div class="date"> {{currentWeatherData.sys.country}}</div>
+</div> <!-- .forecast-header -->
+<div class="forecast-content">
+    <div class="location"> {{currentWeatherData.weather[0].description}}</div>
 
-                </div>
-            </div>
-            <div class="panel-body">
-                <canvas id="line" class="chart chart-line" chart-data="data"
-                        chart-labels="labels"
-                        chart-click="onClick">
-                </canvas>
-            </div>
-
-            <div class="panel-footer">
-                <small>
-                    <p>Wind Speed: {{currentWeatherData.wind.speed}} km/h</p>
-                    <p>Pressure: {{currentWeatherData.main.pressure}} hPa</p>
-                    <p>Humidity: {{currentWeatherData.main.humidity}}%</p>
-                </small>
-            </div>
+    <div class="degree">
+        <div class="num">{{currentWeatherData.main.temp}}<sup>o</sup>C</div>
+        <div class="forecast-icon">
+            <img ng-src="{{getIconImageUrl(currentWeatherData.weather[0].icon)}}"/>
         </div>
-
+    </div>
+    <span>Wind Speed: {{currentWeatherData.wind.speed}} km/h</span>
+    <span>Pressure: {{currentWeatherData.main.pressure}} hP</span>
+    <span>Humidity: {{currentWeatherData.main.humidity}}%</span>
+    <span>Min: {{currentWeatherData.main.temp_min}} <sup>o</sup>C</span>
+    <span>Min: {{currentWeatherData.main.temp_max}} <sup>o</sup>C</span>
+    <br/>
+    <div>
+        <h3>Temp forecast</h3>
+        <canvas id="line" class="chart chart-line" chart-data="data"
+                chart-labels="labels"
+                chart-click="onClick">
+        </canvas>
     </div>
 </div>

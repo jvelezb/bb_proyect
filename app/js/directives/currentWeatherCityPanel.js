@@ -27,9 +27,10 @@ angular.module('openWeatherApp.directives')
                         });
                         scope.labels = listLabels;
                         scope.data = listData;
-                        console.log(scope.data)
+
+
                         scope.onClick = function (points, evt) {
-                            console.log(points, evt);
+
                         };
                         scope.datasetOverride = [{yAxisID: 'y-axis-1'}, {yAxisID: 'y-axis-2'}];
                         scope.options = {
@@ -39,13 +40,8 @@ angular.module('openWeatherApp.directives')
                                         id: 'y-axis-1',
                                         type: 'linear',
                                         display: true,
-                                        position: 'left'
-                                    },
-                                    {
-                                        id: 'y-axis-2',
-                                        type: 'linear',
-                                        display: true,
-                                        position: 'right'
+                                        position: 'left',
+                                        label: "temp"
                                     }
                                 ]
                             }

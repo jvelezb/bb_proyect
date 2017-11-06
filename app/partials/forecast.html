@@ -1,24 +1,63 @@
-<div class="container">
-    <div cities-panel="forecast" show-entry="citiesArray" ciudad-clima="currentWeather"></div>
+<div class="site-content">
+    <div class="site-header">
+        <div class="container">
+            <a href="index.html" class="branding">
+                <img src="../assests/img/logo.png" alt="" class="logo">
+                <div class="logo-type">
+                    <h1 class="site-title">Juan Velez - test</h1>
+                    <small class="site-description">juan.velez@ibm.com</small>
+                </div>
+            </a>
+        </div>
+    </div> <!-- .site-header -->
+    <div class="main-navigation">
+        <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+        <div cities-panel="forecast" show-entry="citiesArray" ciudad-clima="currentWeather"></div>
+    </div>
 
 
-    <div class="weather-data" ng-show="true">
+    <div class="hero" data-bg-image="../assests/img/banner.png">
+        <div class="container">
+
+        </div>
+    </div>
+    <div class="forecast-table">
+        <div class="container">
+
+
+            <div class="forecast-container">
+                <div class="today forecast">
+                    <div current-weather-panel="current" show-entry="currentWeather"
+                         forecast-data-Chart="forecast"></div>
+                </div>
+
+                <div class="forecast" ng-repeat="number in rangeForecast()">
+                    <div weather-panel="forecast" show-entry="forecast.list[number]"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<footer class="site-footer">
+    <div class="container">
         <div class="row">
-            <div class="col-xs-12">
-                <div class="">
-                    <h3>
-                        {{forecast.city.name }}
-                    </h3>
+
+            <div class="col-md-3 col-md-offset-1">
+                <div class="social-links">
+
+                    <a href="http://www.twitter.com/jvelezb"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/juan-velez-ballesteros-81419912/"><i
+                            class="fa fa-linkedin"></i></a>
+                    <a href="https://github.com/jvelezb"><i class="fa fa-github"></i></a>
                 </div>
             </div>
         </div>
-        <div current-weather-panel="current" show-entry="currentWeather" forecast-data-Chart="forecast"></div>
 
-
-        <div class="row">
-            <div class="col-xs-4" ng-repeat="number in rangeForecast()">
-                <div weather-panel="forecast" show-entry="forecast.list[number]"></div>
-            </div>
-        </div>
+        <p class="colophon">Juan Velez Ballesteros -IBM</p>
     </div>
+</footer> <!-- .site-footer -->
 </div>

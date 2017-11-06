@@ -33,7 +33,6 @@ angular.module('openWeatherApp.directives')
                     }).$promise.then(function (result) {
                         scope.currentW = result;
                     });
-                    console.log(scope.currentW);
 
 
                 };

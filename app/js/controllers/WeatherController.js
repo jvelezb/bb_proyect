@@ -35,7 +35,7 @@ angular.module('openWeatherApp.controllers')
                 $scope.rangeForecast = function () {
                     var arr = [];
 
-                    for (var i = 0; i < maxForecast; i++) {
+                    for (var i = 1; i < maxForecast; i++) {
                         arr.push(i);
                     }
                     return arr;

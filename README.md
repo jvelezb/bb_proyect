@@ -25,9 +25,6 @@ two new folders in your project.
 * `node_modules` - contains the npm packages for the tools we need
 * `app/bower_components` - contains the Angular framework files
 
-*Note that the `bower_components` folder would normally be installed in the root folder but
-`angular-seed` changes this location through the `.bowerrc` file. Putting it in the `app` folder
-makes it easier to serve the files by a web server.*
 
 ### Run the Application
 
@@ -43,7 +40,20 @@ Now browse to the app at [`localhost:8000/index.html`][local-app-url].
 
 ## Description of the proyect
 
-The main file is inside of
+The main file is inside of app/ index.html
+
+All the directives, filters, routing, controllers are inside js/**
+
+There is only one controller.
+The view is formed by 3 directives.
+There is one service which helps parse the responses and add the tokens.
+All the values are configurables in the services folder.
+
+In the directives there are implemented promises for supporting asynchronous request.
+
+
+The services builds all the request necesary to make request.
+
 
 
 
@@ -118,39 +128,9 @@ npm run update-webdriver
 Once you have ensured that the development web server hosting our application is up and running, you
 can run the end-to-end tests using the supplied npm script:
 
-```
-npm run protractor
-```
-
-This script will execute the end-to-end tests against the application being hosted on the
-development server.
-
-**Note:**
-Under the hood, Protractor uses the [Selenium Standalone Server][selenium], which in turn requires
-the [Java Development Kit (JDK)][jdk] to be installed on your local machine. Check this by running
-`java -version` from the command line.
-
-If JDK is not already installed, you can download it [here][jdk-download].
 
 
 
 ## Contact
+juanvelez@ibm.com
 
-For more information on AngularJS please check out.
-
-
-[angularjs]: https://angularjs.org/
-[bower]: http://bower.io/
-[git]: https://git-scm.com/
-[http-server]: https://github.com/indexzero/http-server
-[jasmine]: https://jasmine.github.io/
-[jdk]: https://wikipedia.org/wiki/Java_Development_Kit
-[jdk-download]: http://www.oracle.com/technetwork/java/javase/downloads
-[karma]: https://karma-runner.github.io/
-[local-app-url]: http://localhost:8000/index.html
-[node]: https://nodejs.org/
-[npm]: https://www.npmjs.org/
-[protractor]: http://www.protractortest.org/
-[selenium]: http://docs.seleniumhq.org/
-[travis]: https://travis-ci.org/
-[travis-docs]: https://docs.travis-ci.com/user/getting-started
